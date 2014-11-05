@@ -1,11 +1,11 @@
-displ<launch>
+<launch>
   
   <!-- DEFINE WHICH CAMERA ARE YOU USING AND REMAP TOPICS AT WILL HERE /-->
   
   <!--OPENNI LAUNCH FOR KINECT SENSOR /-->
  <include file="$(find openni_launch)/launch/openni.launch" /> 
 
- <node pkg="tf" type="static_transform_publisher" name="kinect_phasespace" args="-0.516095 1.20207 1.02611 0.418951 0.00200822 0.908091 -0.021671 /camera_rgb_optical_frame /world  100" />   
+ <node pkg="tf" type="static_transform_publisher" name="kinect_phasespace" args="-0.214974 0.826347 1.7019 -0.692437 -0.0875716 0.704621 0.105284 /camera_rgb_optical_frame /world  100" />   
 
   <!-- OPENNI2 LAUNCH FOR NEW PRIMESENSE/ASUS SENSOR /-->
   <!-- <include file="$(find openni2_launch)/launch/openni2.launch"></include> /-->

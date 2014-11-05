@@ -6,12 +6,14 @@
  <xacro:include filename="$(find display)/urdf/bracelet.urdf.xacro"/>  
  <xacro:include filename="$(find display)/urdf/star.urdf.xacro"/> 
  <xacro:include filename="$(find display)/urdf/object.urdf.xacro"/>  
+  <xacro:include filename="$(find display)/urdf/hand.urdf.xacro"/>  
   <xacro:include filename="$(find display)/urdf/materials.urdf"/>
 
 
   <xacro:model_wrist_bracelet name="wrist_bracelet" parent="world" color="Orange"/> 
   <xacro:model_star name="star" parent="world" color="SickBlue"/> 
   <xacro:model_object name="object" parent="star" color="Blue"/>
+  <xacro:model_hand name="hand" parent="wrist_bracelet" color="Red"/>
 
 </robot>
 

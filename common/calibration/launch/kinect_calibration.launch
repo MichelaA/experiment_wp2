@@ -4,8 +4,8 @@
   <include file="$(find tf_frames)/launch/tf_kalman_wrist.launch"/> 
 
   <node pkg="calibration" type="kinect_calibration" name="kinect_calibration_node" output="screen">
-  	<param name="manualTxyz" value= "-0.10,0.42,1.33" />
-  	<param name="manualQwxyz" value= "0.52,0.53,0.46,-0.48" />
+  	<param name="manualTxyz" value= "0.13,0.15,1.16" />
+  	<param name="manualQwxyz" value= "0.43,0.56,0.55,-0.44" />
   </node> 
 
 </launch>

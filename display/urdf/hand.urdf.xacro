@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <macro name="model_hand" params="name parent color">
+  
+    <link name="${name}">
+      <visual>
+        <geometry>
+         <mesh filename="file://$(find display)/mesh/hand/hand.stl" scale="0.1 0.1 0.1"/>
+        </geometry>
+        <material name="${color}" />
+      </visual>
+    </link>
+ 
+   <joint name="${parent}_${name}_base_joint" type="continuous">
+      <parent link="${parent}"/>
+      <child link="${name}"/>
+    </joint> 
+   
+  </macro>
+
+
+</robot>
+

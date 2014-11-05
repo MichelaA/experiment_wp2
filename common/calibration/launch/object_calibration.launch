@@ -1,14 +1,15 @@
 <!-- calculate the transfomation between /world (phase space) and kinect. -->
 <launch>
- <node pkg="tf" type="static_transform_publisher" name="kinect_phasespace" args="-0.516095 1.20207 1.02611 0.418951 0.00200822 0.908091 -0.021671 /camera_rgb_optical_frame /world  100" /> 
+ <node pkg="tf" type="static_transform_publisher" name="kinect_phasespace" args="-0.214974 0.826347 1.7019 -0.692437 -0.0875716 0.704621 0.105284 /camera_rgb_optical_frame /world  100" /> 
 
 <include file="$(find phase_space)/launch/phase_space.launch"/>
 <include file="$(find tf_frames)/launch/tf_kalman_star.launch"/>
   
 
-<node pkg="calibration" type="object_calibration" name="object_calibration_node" output="screen"/> 
-	<param name="manualTxyz" value= "-0.10,0.42,1.33" />
-  	<param name="manualQwxyz" value= "0.52,0.53,0.46,-0.48" />
+<node pkg="calibration" type="object_calibration" name="object_calibration_node" output="screen"> 
+	<param name="manualTxyz" value= "-0.16,0.15,1.12" />
+  	<param name="manualQwxyz" value= "0.92,0.07,-0.37,-0.03" /> 
+ </node>
 </launch>
 
 

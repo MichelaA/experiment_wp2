@@ -78,7 +78,7 @@ add_library(kalman
 
 ## Declare a cpp executable
 add_executable(tf_kalman_node src/tf_kalman_node.cpp)
-add_executable(tf_without_kalman_node src/tf_without_kalman_node.cpp)
+
 
 
 ## Add cmake target dependencies of the executable/library
@@ -90,9 +90,7 @@ target_link_libraries(tf_kalman_node
    kalman
 )
 
-target_link_libraries(tf_without_kalman_node
-   ${catkin_LIBRARIES}
-)
+
 #############
 ## Install ##
 #############

@@ -71,9 +71,10 @@ class object_calibration
       std::vector<float> elems;
       std::stringstream ss(txyz_string);
       std::string item;
-      while (std::getline(ss, item, ',')) {
+
+      while (std::getline(ss, item, ','))
         elems.push_back(std::atof(item.c_str()));
-      }
+
       manualTxyz(0)=elems[0];
       manualTxyz(1)=elems[1];
       manualTxyz(2)=elems[2];

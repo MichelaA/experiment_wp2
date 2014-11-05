@@ -186,7 +186,7 @@ int main(int argc, char **argv)
   ros::NodeHandle nh;
 
   tf_frames::system_calibration node(nh);
-  node.calculateTranformation();
+  //node.calculateTranformation();
   ros::spin();  
   
   return 0;

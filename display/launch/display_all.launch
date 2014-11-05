@@ -1,10 +1,9 @@
 <launch>
 
-<!--
+
 <include file="$(find phase_space)/launch/phase_space.launch"/>
 <include file="$(find tf_frames)/launch/tf_kalman_star.launch"/>
 <include file="$(find tf_frames)/launch/tf_kalman_wrist.launch"/>
--->
 
 <arg name="gui" default="False" />
 <param name="use_gui" value="$(arg gui)"/>
@@ -12,10 +11,9 @@
 <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
 <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
 
-<node name="star_to_world_tf" pkg="tf" type="static_transform_publisher"  args="1 1 1 -0.42512 0.800343 0.183133 0.389671 /world /star 10" /> 
-<node name="wrist_to_world_tf" pkg="tf" type="static_transform_publisher"  args="1 1 -1 -0.42512 0.800343 0.183133 0.389671 /world /wrist_bracelet 10" /> 
- <node name="object_to_star_tf" pkg="tf" type="static_transform_publisher"  args="1 -1 1 -0.42512 0.800343 0.183133 0.389671 /star /object 10" />
+<node name="object_to_star_tf" pkg="tf" type="static_transform_publisher"  args="-0.0166548 0.00352085 0.0752419 -0.341955 0.893995 0.0701572 0.277847 /star /object 10" />
 
+<node name="hand_to_wrist_tf" pkg="tf" type="static_transform_publisher"  args="0 0 0 0 0 0 -1 /wrist_bracelet /hand 10" />
 
 
 </launch>

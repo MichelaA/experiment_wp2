@@ -9,7 +9,7 @@ set(CMAKE_CXX_FLAGS "-g")
 
 ## System dependencies are found with CMake's conventions
 find_package(Boost REQUIRED COMPONENTS filesystem system)
-find_package(Eigen3 REQUIRED)
+find_package(Eigen REQUIRED)
 find_package(PCL 1.7 REQUIRED)
 
 ## Uncomment this if the package has a setup.py. This macro ensures
@@ -95,7 +95,7 @@ catkin_package(
 include_directories(include
   ${catkin_INCLUDE_DIRS}
   ${eigen_INCLUDE_DIRS} /usr/include/eigen3
-  /home/ucig15/poseEstimation/include
+  /home/kuko/Code/poseEstimation/include
   ${PCL_INCLUDE_DIRS}
 
 )
@@ -106,7 +106,7 @@ add_definitions(
 
 link_directories(
   ${PCL_LIBRARY_DIRS}
- /home/ucig15/poseEstimation/build
+ /home/kuko/Code/poseEstimation/build
 
 )
 
