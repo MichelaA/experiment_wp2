@@ -1,0 +1,31 @@
+*************** CALIBRAZIONE ***************
+
+1) Calibrazione kinect (da fare solo quando si muove la telecamera)
+	-Lanciare kinect_calibration.launch dentro calibration. Questo launch esegue i seguenti passi:
+		-attiva il phase space (lanciando phase_space.launch)--> sul topic /phase_space_markers iniziano ad essere pubblicate le posizioni dei led 
+		- lancia il nodo tf_kalman_node che calcola la trasformata tra world-->wirst_bracelet 
+		- lancia il nodo kinect_calibration per calcolare la trasformata tra word-->kinect
+	-Aggiornare i parametri della static_transform /world-->camera_rgb_optical_frame nel file object_calibration.launch con i valori dati in output
+
+	-Aggiornare i parametri della static_transform /world-->camera_rgb_optical_frame nel file collect_launch.launch con i valori dati in output
+	
+
+2) Calibrazione della stella sull'oggetto (da eseguire ogni volta che la stella viene posizionata sull'oggetto)
+	- Lanciare object_calibration. Questo launch esegue i seguenti passi:
+		-attiva il phase space (lanciando phase_space.launch)--> sul topic /phase_space_markers iniziano ad essere pubblicate le posizioni dei led 
+	 	-lancia il nodo tf_kalman_node che calcola la trasformata tra world-->star
+		-lancia il nodo object_calibration per calcolare la trasformata tra object-->world
+	- Aggiornare i parametri della static_transform /star_link --> /object_link  nel file collect_launch.launch con i valori dati in output
+	
+
+
+*************** REGISTRAZIONE ESPERIMENTO ***************
+
+1) Lanciare collect_launch.launch. Questo launch esegue i seguenti passi:
+	- -attiva il phase space (lanciando phase_space.launch)--> sul topic /phase_space_markers iniziano ad essere pubblicate le posizioni dei led 
+	- lancia il nodo tf_kalman_node che calcola la trasformata tra world-->wirst_bracelet 
+	- lancia il nodo tf_kalman_node che calcola la trasformata tra world-->star
+	- lancia il nodo per avviare la registrazione dei dati dalla kinect
+	- lancia il nodo collectData_node che sincronizza i dati delle posizioni dei LEDs, delle due trasformate world->wrist e world->star e li pubblica sul topic /data_info 
+
+

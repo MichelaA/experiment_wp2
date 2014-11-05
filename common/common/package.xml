@@ -1,0 +1,24 @@
+<package>
+  <name>common</name>
+  <version>0.0.0</version>
+  <description>
+    ROS meta-package containing common ROS packages.
+  </description>
+  <maintainer email="carlos.rosales@for.unipi.it">Carlos Rosales</maintainer>
+  <maintainer email="zahra.boroujeni@gmail.com">Zahra boroujeni</maintainer>
+  <maintainer email="michela.antonelli@iet.unipi.it">Michela Antonelli</maintainer>
+  
+  <license>GPLv2</license>
+  
+  <author>Carlos Rosales</author>
+  <author>Zahra Boroujeni</author>
+  <author>Michela Antonelli</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>tf_frames</run_depend>
+
+  <export>
+    <metapackage/>
+  </export>
+</package>

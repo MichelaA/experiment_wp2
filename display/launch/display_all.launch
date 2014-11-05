@@ -1,0 +1,22 @@
+<launch>
+
+<!--
+<include file="$(find phase_space)/launch/phase_space.launch"/>
+<include file="$(find tf_frames)/launch/tf_kalman_star.launch"/>
+<include file="$(find tf_frames)/launch/tf_kalman_wrist.launch"/>
+-->
+
+<arg name="gui" default="False" />
+<param name="use_gui" value="$(arg gui)"/>
+<param name="robot_description"	command="$(find xacro)/xacro.py $(find display)/urdf/display_all.urdf.xacro" />
+<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+
+<node name="star_to_world_tf" pkg="tf" type="static_transform_publisher"  args="1 1 1 -0.42512 0.800343 0.183133 0.389671 /world /star 10" /> 
+<node name="wrist_to_world_tf" pkg="tf" type="static_transform_publisher"  args="1 1 -1 -0.42512 0.800343 0.183133 0.389671 /world /wrist_bracelet 10" /> 
+ <node name="object_to_star_tf" pkg="tf" type="static_transform_publisher"  args="1 -1 1 -0.42512 0.800343 0.183133 0.389671 /star /object 10" />
+
+
+
+</launch>
+

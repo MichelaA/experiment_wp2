@@ -1,0 +1,21 @@
+<launch>
+
+ <include file="$(find phase_space)/launch/phase_space.launch"/>
+
+ <!-- <include file="$(find tf_frames)/launch/tf_kalman_thimbles.launch"/>  -->
+  	<include file="$(find tf_frames)/launch/tf_kalman_wrist.launch"/> 
+  	<include file="$(find tf_frames)/launch/tf_kalman_star.launch"/>
+	<include file="$(find openni_launch)/launch/openni.launch" /> 
+
+	<node pkg="collect" name="collectData_node" type="collectData_node" respawn="true" output="screen"/>
+
+ 	<node pkg="tf" type="static_transform_publisher" name="kinect_phasespace" args="-0.516095 1.20207 1.02611 0.418951 0.00200822 0.908091 -0.021671 /camera_rgb_optical_frame /world  100" /> 
+
+  	<node pkg="tf" type="static_transform_publisher" name="object_star_frame" args="-0.0237946 -0.0225919 -0.00339484 -0.42512 0.800343 0.183133 0.389671 /star /object 1" />
+
+
+
+ </launch>
+
+     
+     

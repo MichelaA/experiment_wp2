@@ -1,0 +1,11 @@
+<!-- calculate the transfomation between /world (phase space) and kinect. -->
+<launch>
+  <include file="$(find phase_space)/launch/phase_space.launch"/>
+  <include file="$(find tf_frames)/launch/tf_kalman_wrist.launch"/> 
+
+  <node pkg="calibration" type="kinect_calibration" name="kinect_calibration_node" output="screen">
+  	<param name="manualTxyz" value= "-0.10,0.42,1.33" />
+  	<param name="manualQwxyz" value= "0.52,0.53,0.46,-0.48" />
+  </node> 
+
+</launch>

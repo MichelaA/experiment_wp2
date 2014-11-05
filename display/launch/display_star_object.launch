@@ -1,0 +1,20 @@
+<launch>
+
+<include file="$(find phase_space)/launch/phase_space.launch"/>
+<include file="$(find tf_frames)/launch/tf_kalman_star.launch"/>
+
+<node name="object_to_star_tf" pkg="tf" type="static_transform_publisher"  args="-0.0154882 0.0050011 0.0628608 -0.557944 0.724533 0.0899373 0.394552 /star /object 1" />
+
+
+	<arg name="model" />
+	<arg name="gui" default="False" />
+	<param name="use_gui" value="$(arg gui)"/>
+	<param name="robot_description" command="$(find xacro)/xacro.py $(find display)/urdf/star_object.urdf.xacro" />
+	
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" /> 
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/> 
+
+
+</launch>
+
+

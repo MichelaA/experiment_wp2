@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<macro name="model_wrist_bracelet" params="name parent color">
+  <link name="${name}">
+  <visual>
+        <geometry>
+         <mesh filename="file://$(find display)/mesh/wrist_bracelet.stl"/>
+        </geometry>
+        <material name="${color}" />
+      </visual>>
+  </link>
+
+ <joint name="${parent}_${name}_base_joint" type="continuous">
+      <parent link="${parent}"/>
+      <child link="${name}"/>
+    </joint> 
+
+  </macro>
+</robot>

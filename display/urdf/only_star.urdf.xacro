@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="star">
+
+
+ <link name="world" />
+<xacro:include filename="$(find display)/urdf/star.urdf.xacro"/> 
+<xacro:include filename="$(find display)/urdf/materials.urdf"/>
+
+<xacro:model_star name="star" parent="world" color="Blue"/>
+
+
+</robot>

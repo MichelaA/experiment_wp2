@@ -1,0 +1,10 @@
+<launch>
+  <!-- args = list of led id -->
+  
+  <node pkg="tf_frames" type="tf_kalman_node" name="tf_kalman_star" args="40 42 44 47 45" output="screen">
+    <param name="cad_file" value="$(find tf_frames)/config/CAD_FILES/star.txt" />
+    <param name="start_frame" value="/world" />
+    <param name="end_frame" value="/star"/>
+    <param name="topic_name" value="world_star"/>
+  </node>
+</launch>

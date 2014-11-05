@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="object">
+
+<xacro:include filename="$(find display)/urdf/object.urdf.xacro"/> 
+<xacro:include filename="$(find display)/urdf/materials.urdf"/>
+
+<xacro:model_object name="object" parent="world" color="Orange"/>
+  
+</robot>
