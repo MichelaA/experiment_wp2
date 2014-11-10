@@ -1,0 +1,5 @@
+ <launch>
+ 
+ <node pkg="tf" type="static_transform_publisher" name="kinect_phasespace" args="-0.214974 0.826347 1.7019 -0.692437 -0.0875716 0.704621 0.105284 /camera_rgb_optical_frame /world  100" /> 
+
+ </launch>

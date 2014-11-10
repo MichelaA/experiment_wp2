@@ -1,0 +1,14 @@
+<!-- calculate the transfomation between /world (phase space) and kinect. -->
+<launch>
+ 
+<include file="$(find phase_space)/launch/phase_space.launch"/>
+<include file="$(find tf_frames)/launch/tf_kalman_wrist.launch"/> 
+<include file="$(find tf_frames)/launch/tf_kalman_hand.launch"/>
+  
+
+<node pkg="calibration" type="hand_calibration" name="hand_calibration_node" output="screen"/> 
+	
+</launch>
+
+
+

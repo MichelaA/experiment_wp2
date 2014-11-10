@@ -1,6 +1,7 @@
-<!-- calculate the transfomation between /world (phase space) and kinect. -->
+<!-- calculate the transfomation between /object and star. -->
 <launch>
- <node pkg="tf" type="static_transform_publisher" name="kinect_phasespace" args="-0.214974 0.826347 1.7019 -0.692437 -0.0875716 0.704621 0.105284 /camera_rgb_optical_frame /world  100" /> 
+
+<include file="$(find tf_frames)/launch/tf_camera_world.launch"/>
 
 <include file="$(find phase_space)/launch/phase_space.launch"/>
 <include file="$(find tf_frames)/launch/tf_kalman_star.launch"/>

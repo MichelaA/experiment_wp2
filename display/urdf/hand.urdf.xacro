@@ -6,7 +6,7 @@
     <link name="${name}">
       <visual>
         <geometry>
-         <mesh filename="file://$(find display)/mesh/hand/hand.stl" scale="0.1 0.1 0.1"/>
+         <mesh filename="file://$(find display)/mesh/hand/total_hand.stl" scale="0.01 0.01 0.01"/>
         </geometry>
         <material name="${color}" />
       </visual>

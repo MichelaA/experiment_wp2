@@ -1,5 +1,9 @@
 <launch>
 
+<include file="$(find tf_frames)/launch/tf_camera_world.launch"/>
+<include file="$(find tf_frames)/launch/tf_star_object.launch"/>
+<include file="$(find tf_frames)/launch/tf_wrist_hand.launch"/>
+
 
 <include file="$(find phase_space)/launch/phase_space.launch"/>
 <include file="$(find tf_frames)/launch/tf_kalman_star.launch"/>
@@ -10,11 +14,6 @@
 <param name="robot_description"	command="$(find xacro)/xacro.py $(find display)/urdf/display_all.urdf.xacro" />
 <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
 <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
-
-<node name="object_to_star_tf" pkg="tf" type="static_transform_publisher"  args="-0.0166548 0.00352085 0.0752419 -0.341955 0.893995 0.0701572 0.277847 /star /object 10" />
-
-<node name="hand_to_wrist_tf" pkg="tf" type="static_transform_publisher"  args="0 0 0 0 0 0 -1 /wrist_bracelet /hand 10" />
-
 
 </launch>
 

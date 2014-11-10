@@ -118,6 +118,8 @@ link_directories(
 ## Declare a cpp executable
 add_executable(kinect_calibration src/kinect_calibration.cpp)
 add_executable(object_calibration src/object_calibration.cpp)
+add_executable(hand_calibration src/hand_calibration.cpp)
+
 
 
 ## Add cmake target dependencies of the executable/library
@@ -131,6 +133,9 @@ target_link_libraries(object_calibration
    ${catkin_LIBRARIES} ${boost_LIBRARIES} ${PCL_LIBRARIES} pose_estimation pcl_3d_rec_framework
 )
 
+target_link_libraries(hand_calibration
+   ${catkin_LIBRARIES} #${boost_LIBRARIES} ${PCL_LIBRARIES} pose_estimation pcl_3d_rec_framework
+)
 ## Specify libraries to link a library or executable target against
 # target_link_libraries(calibration_node
 #   ${catkin_LIBRARIES}
